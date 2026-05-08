@@ -1,0 +1,44 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center p-4">
+  <div class="w-full max-w-md">
+    <!-- Card Container -->
+    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-8 text-center">
+        <h1 class="text-3xl font-bold text-white mb-2">Welcome</h1>
+        <p class="text-blue-100">Sign in to your account</p>
+      </div>
+
+      <!-- Form Container -->
+      <div class="px-8 py-12">
+        <div class="mb-8 text-center">
+          <h2 class="text-xl font-semibold text-gray-900 mb-2">Login with SSO</h2>
+          <p class="text-gray-600">Use your organization single sign-on to access the dashboard.</p>
+        </div>
+
+        <div *ngIf="errorMessage" class="mb-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded">
+          <p class="font-semibold">Login Failed</p>
+          <p class="text-sm">{{ errorMessage }}</p>
+        </div>
+
+        <button
+          type="button"
+          pButton
+          label="Login with SSO"
+          icon="pi pi-sign-in"
+          class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-3 rounded-lg transition duration-200"
+          (click)="onLogin()"
+          [disabled]="isLoading"
+        ></button>
+
+        <div *ngIf="isLoading" class="mt-4 text-center text-gray-600 flex items-center justify-center gap-2">
+          <i class="pi pi-spin pi-spinner"></i>
+          <span>Redirecting to SSO...</span>
+        </div>
+      </div>
+
+      <!-- Footer -->
+    </div>
+
+    <!-- Demo Credentials Info -->
+  </div>
+</div>

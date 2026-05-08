@@ -1,0 +1,35 @@
+/* Login Component Styles */
+
+/* Input field styling - additional custom styles if needed */
+:host ::ng-deep {
+  .p-inputtext {
+    width: 100%;
+  }
+
+  .p-inputtext:focus {
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+  }
+}
+
+/* Animation for form entry */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.p-inputtext {
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  :host ::ng-deep .p-button {
+    width: 100%;
+  }
+}
